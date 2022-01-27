@@ -19,9 +19,24 @@ public class MyMain {
 
     // Tail recursive method:
     public static boolean binarySearchTR(int[] arr, int num, int lowerBound, int upperBound) {
-        // YOUR CODE HERE
-        return false;
+        int mid=0;
+        if(upperBound>=lowerBound){
+            mid=lowerBound+(upperBound-lowerBound)/2;
+            if(arr[mid]<num){
+               return binarySearchTR(arr, num, mid+1, upperBound);}
+            else if( arr[mid]>num){
+               return binarySearchTR(arr, num, lowerBound, mid-1);
+            }
+            else if(arr[mid]==num){
+                return true;
+            }
+            else{
+                return false;
+            }
     }
+        else{
+            return false;
+        }}
 
 
 
