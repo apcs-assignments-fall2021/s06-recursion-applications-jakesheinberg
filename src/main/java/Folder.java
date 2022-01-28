@@ -61,9 +61,14 @@ public class Folder implements FileItem {
     // copy() method should be called on all FileItems in the folder, such
     // that the contents of the folder is copied as well.
     public FileItem copy() {
-        // YOUR CODE HERE
-        return null;
+        Folder copy = new Folder(folderName +"_copy" );
+
+        for (int i = 0; i<this.items.size(); i++){
+            copy.items.add(items.get(i).copy());
+        }
+        return copy;
     }
+
 
     // toString method
     @Override
